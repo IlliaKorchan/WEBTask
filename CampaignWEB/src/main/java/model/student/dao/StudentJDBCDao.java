@@ -21,12 +21,9 @@ public class StudentJDBCDao implements StudentDAO, StringConstants {
     @Override
     public List<Student> getAll() {
         List<Student> allStudents = new ArrayList<>();
-        Connection connection;
-        PreparedStatement statement;
+        Connection connection = getConnection();
 
-        try {
-            connection = getConnection();
-            statement = connection.prepareStatement(GET_ALL_STUDENTS_QUERY);
+        try (PreparedStatement statement = connection.prepareStatement(GET_ALL_STUDENTS_QUERY)) {
             ResultSet results = statement.executeQuery();
 
             while(results.next()) {

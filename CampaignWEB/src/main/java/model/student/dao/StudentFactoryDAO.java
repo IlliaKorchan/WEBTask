@@ -8,7 +8,7 @@ import java.util.Optional;
  * @version 1.0
  */
 public class StudentFactoryDAO implements FactoryDAO {
-    private static Optional<FactoryDAO> factory = Optional.ofNullable(null);
+    private static Optional<FactoryDAO> factory = Optional.empty();
 
     private StudentFactoryDAO() {
         try {
