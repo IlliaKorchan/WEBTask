@@ -3,9 +3,9 @@ package model.entities;
 /**
  * POJO student class
  * @author Илья Корчан
- * @version 1.0
+ * @version 1.1
  */
-public class Student {
+public class Student implements Rated{
     private String name;
     private String surname;
     private double averageMark;
@@ -47,10 +47,6 @@ public class Student {
         this.averageMark = averageMark;
     }
 
-    public boolean isPrivileges() {
-        return privileges;
-    }
-
     public void setPrivileges(boolean privileges) {
         this.privileges = privileges;
     }
@@ -63,7 +59,13 @@ public class Student {
         this.additionalMark= additionalMark;
     }
 
+    @Override
     public Double getRatingMark() {
         return averageMark + additionalMark;
+    }
+
+    @Override
+    public boolean isPrivileges() {
+        return privileges;
     }
 }

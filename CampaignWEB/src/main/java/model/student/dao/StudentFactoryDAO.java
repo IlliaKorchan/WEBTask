@@ -5,7 +5,7 @@ import java.util.Optional;
 /**
  * Student factory class
  * @author Илья Корчан
- * @version 1.0
+ * @version 1.1
  */
 public class StudentFactoryDAO implements FactoryDAO {
     private static Optional<FactoryDAO> factory = Optional.empty();

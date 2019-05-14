@@ -1,14 +1,14 @@
 package model.student.dao;
 
-import model.entities.Student;
+import model.entities.Rated;
 import java.util.List;
 
 /**
  * DAO implementation interface
  * @author Илья Корчан
- * @version 1.0
+ * @version 1.1
  */
-@FunctionalInterface
+
 public interface StudentDAO {
-    List<Student> getAll();
+    List<Rated> getAll();
 }

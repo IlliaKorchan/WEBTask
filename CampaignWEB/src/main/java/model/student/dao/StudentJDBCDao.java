@@ -1,5 +1,6 @@
 package model.student.dao;
 
+import model.entities.Rated;
 import model.entities.Student;
 import view.StringConstants;
 
@@ -13,14 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class for fetching data from MySQL database
+ * Class for fetching data about students from MySQL database
  * @author Илья Корчан
- * @version 1.0
+ * @version 1.1
  */
 public class StudentJDBCDao implements StudentDAO, StringConstants {
     @Override
-    public List<Student> getAll() {
-        List<Student> allStudents = new ArrayList<>();
+    public List<Rated> getAll() {
+        List<Rated> allRated = new ArrayList<>();
 
 
         try (Connection connection = getConnection();
@@ -34,13 +35,13 @@ public class StudentJDBCDao implements StudentDAO, StringConstants {
                 boolean privileges = results.getBoolean(4);
                 int additionalMark = results.getInt(5);
 
-                Student student = new Student(name, surname, averageMark, privileges, additionalMark);
-                allStudents.add(student);
+                Rated student = new Student(name, surname, averageMark, privileges, additionalMark);
+                allRated.add(student);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return allStudents;
+        return allRated;
     }
 
     public Connection getConnection() {

@@ -3,7 +3,7 @@ package view;
 /**
  * Interface, that contains String constants
  * @author Илья Корчан
- * @version 1.0
+ * @version 1.1
  */
 public interface StringConstants {
     String INDEX = "/WEB-INF/view/index.jsp";

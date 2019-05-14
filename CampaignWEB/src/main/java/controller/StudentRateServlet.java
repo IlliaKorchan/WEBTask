@@ -1,7 +1,8 @@
 package controller;
 
+import model.entities.Rated;
 import model.entities.RatingCreator;
-import model.entities.Student;
+import model.entities.StudentRatingCreator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +19,11 @@ import java.util.List;
 import static view.StringConstants.INDEX;
 import static view.StringConstants.TIME_FORMAT;
 
+/**
+ * Main Servlet
+ * @author Илья Корчан
+ * @version 1.1
+ */
 public class StudentRateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -27,8 +33,8 @@ public class StudentRateServlet extends HttpServlet {
         LocalDate date = LocalDateTime.now().toLocalDate();
         String currentDate = date.format(DateTimeFormatter.ofPattern(TIME_FORMAT));
 
-        RatingCreator creator = new RatingCreator();
-        List<Student> students = creator.getRating();
+        RatingCreator creator = new StudentRatingCreator();
+        List<Rated> students = creator.getRating();
 
         req.setAttribute("currentDate", currentDate);
         req.setAttribute("students", students);
