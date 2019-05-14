@@ -11,11 +11,7 @@ public class StudentFactoryDAO implements FactoryDAO {
     private static Optional<FactoryDAO> factory = Optional.empty();
 
     private StudentFactoryDAO() {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+
     }
 
     public static FactoryDAO getInstance() {

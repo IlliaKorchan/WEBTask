@@ -34,12 +34,7 @@ public class StudentJDBCDao implements StudentDAO, StringConstants {
                 boolean privileges = results.getBoolean(4);
                 int additionalMark = results.getInt(5);
 
-                Student student = new Student();
-                student.setName(name);
-                student.setSurname(surname);
-                student.setAverageMark(averageMark);
-                student.setPrivileges(privileges);
-                student.setAdditionalMark(additionalMark);
+                Student student = new Student(name, surname, averageMark, privileges, additionalMark);
                 allStudents.add(student);
             }
         } catch (SQLException e) {
@@ -52,9 +47,9 @@ public class StudentJDBCDao implements StudentDAO, StringConstants {
         Connection connection = null;
 
         try {
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return connection;
