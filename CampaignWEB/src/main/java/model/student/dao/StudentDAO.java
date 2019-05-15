@@ -1,6 +1,6 @@
 package model.student.dao;
 
-import model.entities.Rated;
+import model.services.Rated;
 import java.util.List;
 
 /**

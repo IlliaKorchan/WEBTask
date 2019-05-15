@@ -11,7 +11,6 @@ public class StudentFactoryDAO implements FactoryDAO {
     private static Optional<FactoryDAO> factory = Optional.empty();
 
     private StudentFactoryDAO() {
-
     }
 
     public static FactoryDAO getInstance() {

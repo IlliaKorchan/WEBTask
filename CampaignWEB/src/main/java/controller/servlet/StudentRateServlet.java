@@ -1,8 +1,8 @@
-package controller;
+package controller.servlet;
 
-import model.entities.Rated;
-import model.entities.RatingCreator;
-import model.entities.StudentRatingCreator;
+import model.services.Rated;
+import model.services.RatingCreator;
+import model.services.StudentRatingCreator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
 import java.util.List;
 
 import static view.StringConstants.INDEX;

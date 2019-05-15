@@ -1,9 +1,11 @@
 package model.student.dao;
 
-import model.entities.Rated;
+import model.services.Rated;
+import model.services.RatedStudent;
 import model.entities.Student;
 import view.StringConstants;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -35,8 +37,9 @@ public class StudentJDBCDao implements StudentDAO, StringConstants {
                 boolean privileges = results.getBoolean(4);
                 int additionalMark = results.getInt(5);
 
-                Rated student = new Student(name, surname, averageMark, privileges, additionalMark);
-                allRated.add(student);
+                Student student = new Student(name, surname, BigDecimal.valueOf(averageMark), privileges, additionalMark);
+                Rated ratedStudent = new RatedStudent(student);
+                allRated.add(ratedStudent);
             }
         } catch (SQLException e) {
             e.printStackTrace();

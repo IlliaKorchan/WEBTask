@@ -1,4 +1,6 @@
-package model.entities;
+package model.services;
+
+import java.math.BigDecimal;
 
 /**
  * Interface, that marks implementors can be rated
@@ -6,6 +8,6 @@ package model.entities;
  * @version 1.1
  */
 public interface Rated {
-    Double getRatingMark();
+    BigDecimal countAndGetRatingMark();
     boolean isPrivileges();
 }

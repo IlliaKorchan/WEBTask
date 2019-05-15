@@ -1,18 +1,20 @@
 package model.entities;
 
+import java.math.BigDecimal;
+
 /**
  * POJO student class
  * @author Илья Корчан
  * @version 1.1
  */
-public class Student implements Rated{
+public class Student{
     private String name;
     private String surname;
-    private double averageMark;
+    private BigDecimal averageMark;
     private boolean privileges;
     private int additionalMark;
 
-    public Student(String name, String surname, double averageMark, boolean privileges, int additionalMark) {
+    public Student(String name, String surname, BigDecimal averageMark, boolean privileges, int additionalMark) {
         this.name = name;
         this.surname = surname;
         this.averageMark = averageMark;
@@ -39,12 +41,12 @@ public class Student implements Rated{
         this.surname = surname;
     }
 
-    public double getAverageMark() {
+    public BigDecimal getAverageMark() {
         return averageMark;
     }
 
     public void setAverageMark(double averageMark) {
-        this.averageMark = averageMark;
+        this.averageMark = BigDecimal.valueOf(averageMark);
     }
 
     public void setPrivileges(boolean privileges) {
@@ -59,12 +61,6 @@ public class Student implements Rated{
         this.additionalMark= additionalMark;
     }
 
-    @Override
-    public Double getRatingMark() {
-        return averageMark + additionalMark;
-    }
-
-    @Override
     public boolean isPrivileges() {
         return privileges;
     }
