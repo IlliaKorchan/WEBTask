@@ -23,7 +23,7 @@ import static view.StringConstants.TIME_FORMAT;
 /**
  * Main Servlet
  * @author Илья Корчан
- * @version 1.1
+ * @version 1.2
  */
 public class StudentRateServlet extends HttpServlet {
     @Override

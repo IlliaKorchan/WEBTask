@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Class for fetching data about students from MySQL database
  * @author Илья Корчан
- * @version 1.1
+ * @version 1.2
  */
 public class StudentJDBCDao implements StudentDAO, StringConstants {
     @Override

@@ -5,9 +5,8 @@ import java.math.BigDecimal;
 /**
  * Interface, that marks implementors can be rated
  * @author Илья Корчан
- * @version 1.1
+ * @version 1.2
  */
 public interface Rated {
-    BigDecimal countAndGetRatingMark();
-    boolean isPrivileges();
+    BigDecimal countRatingMark();
 }

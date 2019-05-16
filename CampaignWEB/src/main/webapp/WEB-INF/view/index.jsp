@@ -18,10 +18,10 @@
 
         <c:forEach var="students" items="${requestScope.students}">
             <ul>
-                <li>Имя: <c:out value="${students.getStudent().getName()}"/></li>
-                <li>Фамилия: <c:out value="${students.student.getSurname()}"/></li>
-                <li>Средний балл: <c:out value="${students.getRatingMark()}"/></li>
-                <li>Льготы: <c:out value="${students.isPrivileges() ? 'Да' : 'Нет'}"/></li>
+                <li>Имя: <c:out value="${students.student.name}"/></li>
+                <li>Фамилия: <c:out value="${students.student.surname}"/></li>
+                <li>Средний балл: <c:out value="${students.ratingMark}"/></li>
+                <li>Льготы: <c:out value="${students.student.privileges ? 'Да' : 'Нет'}"/></li>
             </ul>
             <hr/>
         </c:forEach>

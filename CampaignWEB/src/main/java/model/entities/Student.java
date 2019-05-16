@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 /**
  * POJO student class
  * @author Илья Корчан
- * @version 1.1
+ * @version 1.2
  */
-public class Student{
+public class Student implements Rateable{
     private String name;
     private String surname;
     private BigDecimal averageMark;
